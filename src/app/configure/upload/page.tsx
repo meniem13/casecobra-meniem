@@ -17,10 +17,9 @@ const Page = () => {
 
   const { startUpload, isUploading } = useUploadThing("imageUploader", {
     onClientUploadComplete: ([data]) => {
-      const configId = data.serverData.configId;
       startTransition(() => {
         router.push(
-          `https://meniem-ecommerce-casecobra.vercel.app/configure/design?id=${configId}`
+          `https://meniem-ecommerce-casecobra.vercel.app/configure/design?id`
         );
       });
     },
@@ -42,7 +41,7 @@ const Page = () => {
   };
 
   const onDropAccepted = (acceptedFiles: File[]) => {
-    startUpload(acceptedFiles, { configId: undefined });
+    startUpload(acceptedFiles);
 
     setIsDragOver(false);
   };
