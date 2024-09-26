@@ -130,7 +130,7 @@ const DesignConfigurator = ({
       const blob = base64ToBlob(base64Data, "image/png");
       const file = new File([blob], "filename.png", { type: "image/png" });
 
-      await startUpload([file]);
+      await startUpload([file], { configId });
     } catch (err) {
       toast({
         title: "Something went wrong",
