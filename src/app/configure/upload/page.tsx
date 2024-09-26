@@ -8,7 +8,7 @@ import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import Dropzone, { FileRejection } from "react-dropzone";
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 const Page = () => {
   const { toast } = useToast();
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
@@ -19,7 +19,9 @@ const Page = () => {
     onClientUploadComplete: ([data]) => {
       const configId = data.serverData.configId;
       startTransition(() => {
-        router.push(`/configure/design?id=${configId}`);
+        router.push(
+          `https://meniem-ecommerce-casecobra.vercel.app/configure/design?id=${configId}`
+        );
       });
     },
     onUploadProgress(p) {
