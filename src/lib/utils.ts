@@ -42,6 +42,6 @@ export function constructMetadata({
       creator: "@meniem",
     },
     icons,
-    metadataBase: new URL("https://casecobra.vercel.app/"),
+    metadataBase: new URL("https://meniem-ecommerce-casecobra.vercel.app/"),
   };
 }
